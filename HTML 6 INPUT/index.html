@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INPUTS</title>
+</head>
+<style>
+    form{
+        align-items: center;
+        margin-top: 60px;
+        background-color: aqua;
+        padding: 20px;
+        border: 2px solid black;
+    }
+    input{
+        margin-bottom: 10px;
+    }
+    label{
+        margin-bottom: 10px;
+        float:inline-start;
+    }
+    span{
+        display: block; 
+        overflow: hidden; 
+        padding: 0px 4px 0px 6px; 
+    }
+    input[type="submit"],[type="reset"]{
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover{
+        background-color: #45a049;
+    }
+    input[type="reset"]:hover{
+        background-color: #45a049;
+    }
+    hr{
+        width: 100%;
+    }
+    p{
+        font-size: 20px;
+    }
+    input[type="radio"],[type="checkbox"]{
+        margin-right: 10px;
+    }
+    input[type="range"]{
+        width: 100%;
+    }
+    input[type="file"]{
+        margin-bottom: 20px;
+    }
+    caption{
+        font-size: 30px;
+        border: 1px solid black;
+        padding: 10px;
+    }
+</style>
+<body>
+    <form>
+        <caption><h1>Sign Up</h1></caption>
+        <label for="fname">First Name</label>
+        <span>
+            <input type="text" name="fname">
+        </span>
+        <br>
+        <br>
+        <label for="lname">Last Name</label>
+        <span>
+            <input type="text" name="lname">
+        </span>
+        <br>
+        <br>
+        <label for="bdate">Birthdate</label>
+        <span>
+            <input type="date" name="bdate">
+        </span>
+        <br>
+        <br>
+        <label for="email">Email</label>
+        <span>
+            <input type="email" name="email">
+        </span>
+        <br>
+        <br>
+        <label for="password">Password</label>
+        <span>
+            <input type="password" name="password">
+        </span>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <p>What is your Gender?</p>
+        <span>
+            <input type="radio" name="gender" value="Male">
+            <label for="male">Male</label>
+        </span>
+        <span>
+            <input type="radio" name="gender" value="Female">
+            <label for="female">Female</label>
+        </span>
+        <br>
+        <br>
+        <p>What are your favorite colors?</p>
+        <span>
+            <input type="checkbox" name="favcolor" value="Red">
+            <label for="red">Red</label>
+        </span>
+        <span>
+            <input type="checkbox" name="favcolor" value="Blue">
+            <label for="blue">Blue</label>
+        </span>
+        <span>
+            <input type="checkbox" name="favcolor" value="Green">
+            <label for="green">Green</label>
+        </span>
+        <br>
+        <br>
+        <label for="points">How much do you like this page?</label>
+        <input type="range" name="points" min="0" max="10">
+        <br>
+        <br>
+        <label for="pic">Select a picture:</label>
+        <input type="file" name="pic" accept="image/*">
+        <br>
+        <br>
+        <label for="favcolor">Choose your favorite color:</label>
+        <input type="color" name="favcolor">
+        <br>
+        <br>
+        <label for="bdaytime">Choose a date and time:</label>
+        <input type="datetime-local" name="bdaytime">
+        <br>
+        <br>
+        <label for="quantity">Choose a number:</label>
+        <input type="number" name="quantity" min="1" max="5">
+        <br>
+        <br>
+        <label for="url">Choose a URL:</label>
+        <input type="url" name="url">
+        <br>
+        <br>
+        <label for="search">Search:</label>
+        <input type="search" name="search">
+        <br>
+        <br>
+        <label for="tel">Telephone:</label>
+        <input type="tel" name="tel">
+        <br>
+        <br>
+        <label for="week">Choose a week:</label>
+        <input type="week" name="week">
+        <br>
+        <br>
+        <label for="month">Choose a month:</label>
+        <input type="month" name="month">
+        <br>
+        <br>
+        <input type="reset" value="Reset">
+        <input type="submit" value="Sign Up">
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+    <form action="/userdata" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required autocomplete="on">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Login">
+    </form>
+    <fieldset>
+        <legend>Login</legend>
+        <input type="text" id="username" name="username" required autocomplete="on">
+        <input type="email" id="email" name="email" required placeholder="Enter your Email" list="myName">
+        <datalist id="myName">
+            <option value="Rahul"></option>
+            <option value="Rohan"></option>
+            <option value="Raj"></option>
+        </datalist>
+        <input type="password" id="password" name="password" required placeholder="Enter your Password">
+    </fieldset>
+</body>
+</html>
