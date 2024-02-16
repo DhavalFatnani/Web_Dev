@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMPLATES</title>
+</head>
+<body>
+    <template id="myTemplate">
+        <h1>My Template</h1>
+        <p>This is a template</p>
+        <template id="subTemplate">
+            <h2>Sub Template</h2>
+            <p>This is a sub template</p>
+        </template>
+    </template>
+</body>
+<script>
+    const data={
+        title: 'This is My Template',
+        content: 'It is a template'
+    };
+    const myTemplate = document.getElementById('myTemplate');
+    const myTemplateClone = myTemplate.content.cloneNode(true);
+
+    const subTemplate = myTemplateClone.querySelector('#subTemplate');
+    const subTemplateClone = subTemplate.content.cloneNode(true);
+    // myTemplateClone.content.querySelector('h1').textContent = data.title;
+    // myTemplateClone.content.querySelector('p').textContent = data.content;
+    myTemplateClone.appendChild(subTemplateClone);
+    document.body.appendChild(myTemplateClone);
+</script>
+</html>
