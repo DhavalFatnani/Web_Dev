@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Location</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #333;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+  <body>
+    <button onclick="getUserLocation()">Boy! Get My Location</button>
+
+    <div id="location"></div>
+    <br />
+    <button id="ok" onclick="okay()">OK!</button>
+  </body>
+  <script>
+    function getUserLocation() {
+      //   alert("HEYYYYYYYYYYYYYYYYYY!");
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        document.getElementById("location").innerHTML =
+          "GeoLocation is not supported by your browser.";
+      }
+    }
+
+    function okay() {
+      document.getElementById("location").innerHTML = "";
+    }
+
+    function showPosition(position) {
+      //   console.log(position.coords.latitude, position.coords.longitude);
+      document.getElementById("location").innerHTML =
+        "<br>Latitude: " +
+        position.coords.latitude +
+        "<br>Longitude: " +
+        position.coords.longitude;
+    }
+
+    function showError(error) {
+      //   console.log("Error Function called:", error);
+      document.getElementById("location").innerHTML = "Error: " + error.message;
+    }
+  </script>
+</html>
