@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smiley</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+    }
+
+    canvas {
+      border-radius: 5px;
+      background-color: white;
+    }
+  </style>
+  <body>
+    <canvas id="canvas" height="600" width="800"></canvas>
+  </body>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth - 100;
+
+    //Smiley Face
+    ctx.beginPath();
+    ctx.arc(300, 300, 200, 0, Math.PI * 2);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    // Eyes
+    ctx.beginPath();
+    ctx.arc(200, 250, 20, 0, Math.PI * 2);
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(400, 250, 20, 0, Math.PI * 2);
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    //Mouth
+    ctx.beginPath();
+    ctx.arc(300, 350, 100, 0, Math.PI);
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    //Teeth
+    ctx.beginPath();
+    ctx.moveTo(240, 350);
+    ctx.lineTo(260, 350);
+    ctx.lineTo(260, 360);
+    ctx.lineTo(240, 360);
+    ctx.lineTo(240, 350);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(270, 350);
+    ctx.lineTo(290, 350);
+    ctx.lineTo(290, 360);
+    ctx.lineTo(270, 360);
+    ctx.lineTo(270, 350);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(300, 350);
+    ctx.lineTo(320, 350);
+    ctx.lineTo(320, 360);
+    ctx.lineTo(300, 360);
+    ctx.lineTo(300, 350);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(330, 350);
+    ctx.lineTo(350, 350);
+    ctx.lineTo(350, 360);
+    ctx.lineTo(330, 360);
+    ctx.lineTo(330, 350);
+    ctx.fillStyle = "white";
+    ctx.fill();
+  </script>
+</html>
