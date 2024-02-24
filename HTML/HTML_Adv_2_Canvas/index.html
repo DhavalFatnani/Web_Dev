@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+    }
+
+    canvas {
+      border-radius: 5px;
+      background-color: white;
+      height: 80%;
+      width: 80%;
+    }
+  </style>
+  <body>
+    <canvas id="canvas"></canvas>
+  </body>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+
+    //Fill Rectangle
+    ctx.fillStyle = "Red";
+    ctx.fillRect(20, 20, 70, 20);
+    ctx.fillStyle = "Green";
+    ctx.fillRect(120, 20, 70, 20);
+    ctx.fillStyle = "blue";
+    ctx.fillRect(220, 20, 70, 20);
+
+    //Stroke Rectangle
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "blue";
+    ctx.strokeRect(20, 60, 70, 20);
+    ctx.strokeStyle = "Green";
+    ctx.strokeRect(120, 60, 70, 20);
+    ctx.strokeStyle = "red";
+    ctx.strokeRect(220, 60, 70, 20);
+
+    //Clear Rectangle
+    ctx.fillStyle = "red";
+    ctx.fillRect(20, 100, 70, 20);
+    ctx.clearRect(25, 102, 60, 15);
+
+    //Fill TEXT
+    ctx.font = "30px Arial";
+    ctx.fillStyle = "purple";
+    ctx.fillText("Hey There!", 130, 120);
+    ctx.strokeStyle = "yellow";
+    ctx.strokeText("Hey There!", 130, 145);
+
+    //LINES
+    ctx.beginPath();
+    ctx.moveTo(330, 20);
+    ctx.lineTo(450, 20);
+    ctx.lineTo(450, 40);
+    ctx.lineTo(330, 40);
+    ctx.lineTo(330, 20);
+
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+    ctx.fillStyle = "blue";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(550, 50, 20, 0, Math.PI * 2);
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+    ctx.fillStyle = "blue";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(400, 80);
+    ctx.lineTo(480, 100);
+    ctx.lineTo(330, 100);
+    ctx.lineTo(400, 80);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "green";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(550, 100);
+    ctx.lineTo(600, 100);
+    ctx.lineTo(630, 110);
+    ctx.lineTo(600, 120);
+    ctx.lineTo(550, 120);
+    ctx.lineTo(520, 110);
+    ctx.lineTo(550, 100);
+
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "purple";
+    ctx.stroke();
+    ctx.fillStyle = "pink";
+    ctx.fill();
+  </script>
+</html>
