@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DRAG AND DROP</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    #container {
+      height: 350px;
+      width: 600px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid black;
+    }
+    img {
+      padding: 0 10px;
+    }
+  </style>
+  <body>
+    <div
+      id="container"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"></div>
+    <br />
+    <img
+      id="myimage"
+      src="sampleimage.jpg"
+      alt="sampleimage"
+      height="300"
+      width="400"
+      draggable="true"
+      ondragstart="drag(event)" />
+  </body>
+  <script>
+    function allowDrop(e) {
+      //   alert(e.target.id);
+      e.preventDefault();
+    }
+    function drag(e) {
+      //   alert(e.target.id);
+      e.dataTransfer.setData("myimagetotransfer", e.target.id);
+    }
+    function drop(e) {
+      e.preventDefault();
+      var data = e.dataTransfer.getData("myimagetotransfer");
+      e.target.appendChild(document.getElementById(data));
+    }
+  </script>
+</html>
