@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+    }
+
+    canvas {
+      border-radius: 5px;
+      background-color: white;
+    }
+  </style>
+  <body>
+    <canvas id="canvas" height="600" width="800"></canvas>
+  </body>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const circle = {
+      x: 200,
+      y: 200,
+      radius: 30,
+      dx: 10,
+      dy: 10,
+    };
+
+    function drawCircle() {
+      ctx.beginPath();
+      ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
+      ctx.fillStyle = "red";
+      ctx.fill();
+    }
+
+    drawCircle();
+
+    function updateCircle() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawCircle();
+      circle.x += circle.dx;
+      circle.y += circle.dy;
+
+      requestAnimationFrame(updateCircle);
+
+      if (
+        circle.x + circle.radius > canvas.width ||
+        circle.x - circle.radius < 0
+      ) {
+        circle.dx *= -1;
+      }
+      if (
+        circle.y + circle.radius > canvas.height ||
+        circle.y - circle.radius < 0
+      ) {
+        circle.dy *= -1;
+      }
+    }
+
+    updateCircle();
+  </script>
+</html>
