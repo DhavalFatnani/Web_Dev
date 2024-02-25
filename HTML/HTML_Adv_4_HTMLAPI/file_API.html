@@ -21,10 +21,45 @@
     <input type="text" placeholder="Type Product Name" id="productName" />
     <input type="number" placeholder="Type Product Price" id="productPrice" />
     <button id="cart" onclick="addProductToCart()">Add to Cart</button>
+    <button id="deletecart" onclick="deleteFromCart()">Delete From Cart</button>
+    <button id="deleteAllcart" onclick="deleteAllCart()">
+      Delete ALL From Cart
+    </button>
 
     <div id="output"></div>
   </body>
   <script>
+    function deleteFromCart() {
+      let cart = localStorage.getItem("cart");
+
+      if (cart == null) {
+        cart = [];
+      } else {
+        cart = JSON.parse(cart);
+      }
+
+      let productName = document.getElementById("productName").value;
+      let productPrice = document.getElementById("productPrice").value;
+
+      let index = cart.findIndex(
+        (product) =>
+          product.name === productName && product.price === productPrice
+      );
+
+      if (index !== -1) {
+        cart.splice(index, 1);
+      } else {
+        console.log("Product Not Found");
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      showCart();
+    }
+
+    function deleteAllCart() {
+      localStorage.removeItem("cart");
+      showCart();
+    }
+
     function showCart() {
       let cart = localStorage.getItem("cart");
       //   console.log(cart);
