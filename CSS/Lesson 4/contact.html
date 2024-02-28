@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Tag Styling</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      height: 88vh;
+    }
+
+    nav {
+      display: flex;
+      background-color: black;
+      padding: 15px 20px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    ul {
+      display: flex;
+      gap: 20px;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a:link {
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s;
+    }
+
+    a:visited {
+      color: yellow;
+      background-color: indianred;
+    }
+
+    a:hover {
+      color: green;
+      background-color: white;
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+
+    h1 {
+      text-align: center;
+      height: 88vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <body>
+    <nav>
+      <img src="../Images/gfg-gg-logo.svg" alt="GFG Logo" />
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About Us</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <h1>You want to Reach Out to US!</h1>
+  </body>
+</html>

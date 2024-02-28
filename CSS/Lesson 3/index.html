@@ -3,7 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Image Styling</title>
   </head>
-  <body></body>
+  <style>
+    .grooty {
+      background-image: url("../Images/groot.jpg");
+      background-size: contain;
+      width: 400px;
+      height: 534px;
+      margin-top: 20px;
+    }
+
+    .bgimg {
+      background-image: url("../Images/groot.jpg");
+      background-size: cover;
+      width: 100vw;
+      height: 100vh;
+      margin-top: 20px;
+    }
+  </style>
+  <body>
+    <h1>Image Styling</h1>
+    <img src="../Images/groot.jpg"" alt="Placeholder Image" width="400px"/>
+    <img class="grooty" />
+    <div class="bgimg"></div>
+  </body>
 </html>
