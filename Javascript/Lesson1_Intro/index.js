@@ -44,3 +44,13 @@ console.log(hasCar, ": ", typeof hasCar);
 console.log(hasHouse, ": ", typeof hasHouse);
 console.log(gender, ": ", typeof gender);
 console.log(productsOwned, ": ", typeof productsOwned);
+
+// Concatenation and Template literals
+
+console.log("\nConcatenation and Template Literals: ");
+
+let message = "I am " + userName + " and I am " + age + " years old.";
+console.log(message);
+
+let text = `I am ${userName} and I am ${age} years old.`;
+console.log(text);

@@ -1,0 +1,62 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+header > .info {
+  text-align: center;
+  position: relative;
+  top: -100px;
+  background-color: #3498db;
+  color: #fff;
+  transition: top 0.8s ease-in-out;
+}
+
+.carousal {
+  text-align: center;
+  font-size: 32px;
+  padding: 16px;
+  background-color: #205328;
+}
+
+body:not(:hover) .info {
+  top: 0px;
+}
+
+.nav-bar > ul {
+  background-color: #532820;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  list-style: none;
+  padding: 5px;
+  position: sticky;
+  overflow-y: auto;
+}
+
+.nav-bar > ul > li > a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+#about {
+  height: 100vh;
+  background-color: #4b5320;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#achievements {
+  height: 100vh;
+  border: 1px solid red;
+}
+#legacy {
+  height: 100vh;
+  border: 1px solid red;
+}
+#gallery {
+  height: 100vh;
+  border: 1px solid red;
+}
